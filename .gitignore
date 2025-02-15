@@ -1,0 +1,7 @@
+dataset/
+**/__pycache__/*
+**.zip
+**.jpg
+**.png
+logs/
+model_data/
