@@ -1,7 +1,7 @@
+dataset/
+**/__pycache__/*
+**.zip
+**.jpg
+**.png
 logs/
-test_images/
-.vscode/
-__pycache__
-*.png
-*.pth
-unet_env/
+model_data/

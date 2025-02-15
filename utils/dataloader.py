@@ -125,8 +125,9 @@ class UnetDataset(Dataset):
 
         r = np.random.uniform(-1, 1, 3) * [hue, sat, val] + 1
         #---------------------------------#
-        #   将图像转到HSV上
+        #   Go to the image on the HSV
         #---------------------------------#
+
         hue, sat, val = cv2.split(cv2.cvtColor(image_data, cv2.COLOR_RGB2HSV))
         dtype = image_data.dtype
         #---------------------------------#

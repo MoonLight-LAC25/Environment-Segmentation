@@ -11,13 +11,13 @@ from tqdm import tqdm
 #
 # Currently, the library uses the test set as a verification set and does not divide the test set separately.
 #------------------------------------------------------#
-trainval_percent    = 0.98
+trainval_percent    = 1.0
 train_percent       = 0.80
 #-------------------------------------------------------#
 # Point to the folder where the VOC data set is located
 # Default points to the VOC data set in the root directory
 #-------------------------------------------------------#
-VOCdevkit_path      = '/home/abhinandan/Desktop/data/Thailand Project/white_white/Augmentations/'
+VOCdevkit_path      = 'dataset/train_val'
 
 if __name__ == "__main__":
     random.seed(0)
