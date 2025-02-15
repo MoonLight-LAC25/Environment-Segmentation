@@ -5,3 +5,4 @@ dataset/
 **.png
 logs/
 model_data/
+**/.venv/
