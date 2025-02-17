@@ -46,8 +46,8 @@ if __name__ == "__main__":
     lunar_unet = Lunar_UNet(count=False, input_shape=[640, 640], num_classes=3, classes=["background","surface","rocks"], model_path="logs/moon/run1/best_epoch_weights.pth")
 
     # Example Usage
-    image = Image.open("dataset/test/images/00017.png")
-    binary_rock_mask = lunar_unet.get_binary_rock_mask(image)
+    # image = Image.open("path")
+    # binary_rock_mask = lunar_unet.get_binary_rock_mask(image)
 
 
     
