@@ -2,7 +2,6 @@
 
 from PIL import Image
 import numpy as np
-import cv2
 
 import sys
 import os
@@ -37,9 +36,7 @@ class Lunar_UNet(Unet):
     
     def get_binary_rock_mask(self, image):
         all_mask = self.detect_image(image)
-        rock_mask = self.get_class_mask(all_mask, [108, 59, 42])
-        binary_rock_mask = self.image_utils.binarize_image(masked_img=np.array(rock_mask))
-        return binary_rock_mask
+        return all_mask == 2
 
 if __name__ == "__main__":
     # Test initialisation for model
