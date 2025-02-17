@@ -3,11 +3,6 @@ import copy
 import time
 import os
 
-# check if these are heavy and move inside onnx block if so
-import onnx
-import onnxsim
-import onnxruntime
-
 import cv2
 import numpy as np
 import torch
@@ -265,6 +260,9 @@ class Unet(object):
         return tact_time
 
     def convert_to_onnx(self, simplify, model_path):
+        import onnx
+        import onnxsim
+        import onnxruntime
 
         self.generate(onnx=True)
 
