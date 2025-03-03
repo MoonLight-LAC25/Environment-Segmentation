@@ -51,7 +51,7 @@ if __name__ == "__main__":
     # -----------------------------------------------------#
     #   num_classes     number of classes +1
     # -----------------------------------------------------#
-    num_classes = 3
+    num_classes = 4
     # -----------------------------------------------------#
     #   Backbone network : vgg, resnet50
     # -----------------------------------------------------#
@@ -181,7 +181,7 @@ if __name__ == "__main__":
     # ------------------------------------------------------------------#
     #   save_dir        The folder where weights and log files are saved
     # ------------------------------------------------------------------#
-    save_dir            = 'logs/moon/run1'
+    save_dir            = '/home/student/AIMS_CLOUD_1/Abhi/logs/moon'
     # ------------------------------------------------------------------#
     #   eval_flag       Whether to perform evaluation during training, the evaluation object is the verification set
     #   eval_period     Represents how many epochs are evaluated once. Frequent evaluation is not recommended.
@@ -197,7 +197,7 @@ if __name__ == "__main__":
     # ------------------------------#
     #   Dataset path
     # ------------------------------#
-    VOCdevkit_path  = 'dataset/train_val'
+    VOCdevkit_path  = '/home/student/AIMS_CLOUD_1/Abhi/dataset/train_val'
     # ------------------------------------------------------------------#
     #   Suggested options:
     # When there are few categories (several categories), set to True
