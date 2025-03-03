@@ -36,7 +36,7 @@ class Unet(object):
         # --------------------------------#
         # The number of classes that need to be distinguished +1 (for background)
         # --------------------------------#
-        "num_classes": 3,
+        "num_classes": 4,
         # --------------------------------#
         # Backbone network to be used. Options: "vgg", "resnet50"
         # --------------------------------#
