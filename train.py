@@ -131,7 +131,7 @@ if __name__ == "__main__":
     # ------------------------------------------------------------------#
     Init_Epoch          = 0
     Freeze_Epoch        = 100
-    Freeze_batch_size   = 8
+    Freeze_batch_size   = 16
     # ------------------------------------------------------------------#
     # Training parameters during the unfreezing phase
     # At this time, the backbone of the model is no longer frozen, and the feature extraction network will change.
@@ -140,7 +140,7 @@ if __name__ == "__main__":
     # Unfreeze_batch_size batch_size of the model after unfreezing
     # ------------------------------------------------------------------#
     UnFreeze_Epoch      = 1000
-    Unfreeze_batch_size = 8
+    Unfreeze_batch_size = 16
     # ------------------------------------------------------------------#
     #   Freeze_Train    Whether to perform freeze training
     #                   By default, trunk training is frozen first and then unfrozen.
@@ -181,7 +181,7 @@ if __name__ == "__main__":
     # ------------------------------------------------------------------#
     #   save_dir        The folder where weights and log files are saved
     # ------------------------------------------------------------------#
-    save_dir            = '/home/student/AIMS_CLOUD_1/Abhi/logs/moon'
+    save_dir            = '/home/abhi/Documents/Lunar/Environment-Segmentation/logs/all_classes'
     # ------------------------------------------------------------------#
     #   eval_flag       Whether to perform evaluation during training, the evaluation object is the verification set
     #   eval_period     Represents how many epochs are evaluated once. Frequent evaluation is not recommended.
@@ -197,7 +197,7 @@ if __name__ == "__main__":
     # ------------------------------#
     #   Dataset path
     # ------------------------------#
-    VOCdevkit_path  = '/home/student/AIMS_CLOUD_1/Abhi/dataset/train_val'
+    VOCdevkit_path  = '/home/abhi/Documents/Lunar/dataset/train_val/'
     # ------------------------------------------------------------------#
     #   Suggested options:
     # When there are few categories (several categories), set to True
@@ -223,7 +223,7 @@ if __name__ == "__main__":
     #                   Sometimes enabling multi-threading in Keras is much slower.
     #                   Turn on multi-threading when IO is the bottleneck, that is, the GPU computing speed is much greater than the speed of reading images.
     # ------------------------------------------------------------------#
-    num_workers     = 4
+    num_workers     = 10
 
     seed_everything(seed)
     # ------------------------------------------------------#
