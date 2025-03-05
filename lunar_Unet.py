@@ -34,17 +34,21 @@ class Lunar_UNet(Unet):
 
 if __name__ == "__main__":
     # Test initialisation for model
-    lunar_unet = Lunar_UNet(count=False, input_shape=[640, 640], num_classes=3, classes=["background","surface","rocks"], model_path="logs/moon/run1/best_epoch_weights.pth")
+    lunar_unet = Lunar_UNet(count=False, input_shape=[640, 640], num_classes=4, classes=["background","surface","rocks", "lander"], model_path="logs/all_classes/best_epoch_weights.pth")
     img_utils = ImageUtils()
 
-    image = Image.open("dataset/test/images/00017.png")
+    image = Image.open("/home/abhi/Documents/Lunar/dataset/test/images/00617.png")
     all_mask = lunar_unet.detect_image(image)
     # all_mask.save("all_classes_mask.png")
 
     # get binary rock mask
     rock_mask = lunar_unet.get_class_mask(all_mask, [108, 59, 42])
-    binary_rock_mask = Image.fromarray(img_utils.binarize_image(masked_img=np.array(rock_mask)))
-    binary_rock_mask.save("binary_rocks_mask.png")
+    lander_mask = lunar_unet.get_class_mask(all_mask, [110, 190, 160])
+    # binary_rock_mask = Image.fromarray(img_utils.binarize_image(masked_img=np.array(rock_mask)))
+    # binary_rock_mask.save("binary_rocks_mask.png")
+    rock_mask.save("rock_mask.png")
+    lander_mask.save("lander_mask.png")
+    
 
 
     
