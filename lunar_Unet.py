@@ -34,9 +34,15 @@ class Lunar_UNet(Unet):
                       mod_img[height][width] = mask[height][width][0]
         return Image.fromarray(np.uint8(mod_img))
     
-    def get_binary_rock_mask(self, image):
-        all_mask = self.detect_image(image)
-        return all_mask == 2
+    def get_mask(self, image):
+        self.mask = self.detect_image(image)
+    
+    def get_binary_rock_mask(self):
+        #all_mask = self.detect_image(image)
+        return self.mask == 2
+    
+    def get_binary_lander_mask(self):
+        return self.mask == 3
 
 if __name__ == "__main__":
     # Test initialisation for model
