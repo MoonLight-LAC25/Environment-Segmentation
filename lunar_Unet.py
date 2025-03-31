@@ -17,7 +17,7 @@ from image_utils import ImageUtils
 
 class Lunar_UNet(Unet):
     def __init__(self, **kwargs):
-        lunar_kwargs = {'count':False, 'input_shape':[640, 640], 'num_classes':3, 'classes':["background","surface","rocks"], 'model_path':"logs/moon/run1/best_epoch_weights.pth"}
+        lunar_kwargs = {'count':False, 'input_shape':[640, 640], 'num_classes':4, 'classes':["background","surface","rocks","lander"], 'model_path':"logs/moon/run1/best_epoch_weights.pth"}
         combined_args = {**lunar_kwargs, **kwargs}
         super().__init__(**combined_args)
         self.image_utils = ImageUtils()
@@ -37,10 +37,11 @@ class Lunar_UNet(Unet):
     def get_binary_rock_mask(self, image):
         all_mask = self.detect_image(image)
         return all_mask == 2
+    
 
 if __name__ == "__main__":
     # Test initialisation for model
-    lunar_unet = Lunar_UNet(count=False, input_shape=[640, 640], num_classes=3, classes=["background","surface","rocks"], model_path="logs/moon/run1/best_epoch_weights.pth")
+    lunar_unet = Lunar_UNet(count=False, input_shape=[640, 640], num_classes=4, classes=["background","surface","rocks","lander"], model_path="logs/moon/run1/best_epoch_weights.pth")
 
     # Example Usage
     # image = Image.open("path")
