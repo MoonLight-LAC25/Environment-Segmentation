@@ -44,7 +44,7 @@ class Lunar_UNet(Unet):
 
 if __name__ == "__main__":
     # Test initialisation for model
-    lunar_unet = Lunar_UNet(count=False, input_shape=[640, 640], num_classes=3, classes=["background","surface","rocks"], model_path="logs/moon/run1/best_epoch_weights.pth")
+    lunar_unet = Lunar_UNet(count=False, input_shape=[640, 640], num_classes=4, classes=["background","surface","rocks","lander"], model_path="logs/moon/run1/best_epoch_weights.pth")
 
     # Example Usage
     # image = Image.open("path")
