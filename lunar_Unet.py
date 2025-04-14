@@ -43,12 +43,12 @@ class Lunar_UNet(Unet):
             raise
     
     def get_binary_rock_mask(self):
-        if not self.this_mask:
+        if self.this_mask is None:
             raise ValueError("Mask not set. Call set_mask() first to get rock mask.")
         return self.this_mask == 2
     
     def get_binary_lander_mask(self):
-        if not self.this_mask:
+        if self.this_mask is None:
             raise ValueError("Mask not set. Call set_mask() first to get lander mask.")
         return self.this_mask == 3
     
